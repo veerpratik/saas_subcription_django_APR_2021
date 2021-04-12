@@ -1,0 +1,8 @@
+ADMIN = 1
+MANAGER = 2
+EMPLOYEE = 3
+RESPONSE_ERROR = 'error'
+RESPONSE_MESSAGE = 'message'
+RESPONSE_RESULT = 'result'
+RESPONSE_RESULT2 = 'result2'
+
