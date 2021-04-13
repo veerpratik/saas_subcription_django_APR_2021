@@ -166,6 +166,7 @@ from datetime import timedelta
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+      'AUTH_HEADER_TYPES': ('Token',)
 }
 
 
@@ -175,10 +176,12 @@ LOGIN_REDIRECT_URL = '/checkout/'
 
 AUTH_USER_MODEL = 'common_account.User'
 
+
+##### this for stripe Payment gatway configration##############
 import os
 
 STRIPE_TEST_PUBLIC_KEY = os.environ.get("STRIPE_TEST_PUBLIC_KEY", "pk_test_51IeCU1SH3n5iwFG637NzZXgIONmHYWy6dsdSYMXxYhAwJacDNMOdGTb7gmJAjPRvpbxm7Dk2MVCz9mGb5atVChMO00DYGb6CDL")
-STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "sk_test_51IeCU1SH3n5iwFG6yB2ku3ekYH0w4C5SqdATxo3HAeJqFErJSLCuhPajF3kxI7LCZMJ0h7DmzN6Tl5XiZSmZYZAS005ATO9JKD")
+STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "")
 STRIPE_LIVE_MODE = False
 DJSTRIPE_WEBHOOK_SECRET = "whsec_xxx"  # We don't use this, but it must be set
 
